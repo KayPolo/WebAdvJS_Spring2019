@@ -1,10 +1,11 @@
 /*------------------------------------------------*/
-// Web App - FINISHED
+// Web App 
 // We'll work with Spotify API that returns album thumbnails based on the search keyword.
 /*------------------------------------------------*/
 
 
 //https://developer.spotify.com/console/get-search-item/?q=tania%20bowra&type=artist&market=&limit=&offset=
+//https://developer.spotify.com/documentation/general/guides/authorization-guide/
 
 
 var app = app || {};
@@ -43,11 +44,13 @@ app.main = (function(){
 		// We might call this function again as we create new elements.
 		// When we do so, we don't want to duplicate events in existing objects.
 		$('#search-button').off('click').on('click', function(){
+			console.log($('#search-box').val());
 			loadData($('#search-box').val());
 		});
 
 		$('#search-box').keypress(function(e) {
 			if (e.keyCode == 13) {
+				console.log($('#search-box').val());	
 				loadData($('#search-box').val());
 			}
 		});
@@ -66,9 +69,9 @@ app.main = (function(){
 	            limit: 50,
 	            offset: 10,
 
-	            //https://developer.spotify.com/documentation/general/guides/authorization-guide/
+	            
 
-	            access_token: "BQCXD22bNHQOZ37qFXZjn3cQL2qNMElwDCP19qo67u2kjMyaiJX7tIGBC-EvVLP4xoovHRcIHyyvgij2YV5ZOkoYS-1y-06K_gCwk5S_Fp2ebvk6jYmc7UeAvXq5c5EDzpPBt5KjpiaONy4"
+	            access_token: "BQAQuxRMZRWtNfzA5d9Ax-f-S18OqBQrnoTDEU9bCz3e67G6uR1c2fl5pbHOYr1m0d9s45HxJszF87T9vj-NHeCG3sLFOO0KAqLJyH-AYS0NnrX9OpY4y2mC03BkT9s_PNdd7NAF2vPIME0"
 	        },
 
 	        
